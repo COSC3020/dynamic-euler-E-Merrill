@@ -1,9 +1,9 @@
-function factorial(n) {
-    if(n === 0) return 1;
-    else return n * factorial(n - 1);
-}
-
 function e(n) {
-    if(n === 0) return 1;
-    else return 1.0 / factorial(n) + e(n - 1);
+    let denom = 1;  //Denominator; this is the n! portion of the summation
+    let e = 1;      //The current approximation of e
+    for (let i = 1; i <= n; i++){
+        denom = denom * i;
+        e += 1/denom;
+    }
+    return e;
 }
